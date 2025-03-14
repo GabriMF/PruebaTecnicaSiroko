@@ -1,17 +1,15 @@
 <?php
 declare(strict_types=1);
-namespace Application;
+namespace Application\Command;
 
-use Domain\Product;
-use Domain\ShoppingCart;
-use Domain\Customer;
-use Domain\ProductRepository;
 use Domain\CustomerRepository;
+use Domain\ProductRepository;
+use Domain\ShoppingCart;
+use Exceptions\CustomerNotFoundException;
 use Exceptions\ItemNotAvailableException;
 use Exceptions\NoStockAvailableException;
-use Exceptions\CustomerNotFoundException;
 
-class AddToCartUseCase
+class AddProductToShoppingCartUseCase
 {
     private ProductRepository $productRepository;
     private CustomerRepository $customerRepository;
